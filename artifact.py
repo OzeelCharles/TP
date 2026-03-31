@@ -36,21 +36,30 @@ class Sculpture(Artifact):
         return self.calculate_age() > limit
 
 
+class Building(Artifact):
+    def __init__(self, name, date, size, country, city):
+        super().__init__(name, date)
+        self.size = size
+        self.country = country
+        self.city = city
+
+
 def give_name_artifact():
     return f"artifact name: {__name__}"
 
 
 if __name__ == "__main__":
+    print(give_name_artifact())
     obj1 = Artifact("abc", 1321)
     print(f"{obj1.name} age: {obj1.calculate_age()}")
     print(obj1)
     print(f"{type(obj1).__name__=}")
-
-    print("-------\n")
-
     painting1 = Painting("I and the Village", 1911, "Chagall", 'oil')
     print(painting1)
-    print(f"{painting1.name}: age is {painting1.calculate_age()}; is oil: {painting1.is_oil()}")
+    print(f"{painting1.name}: age is {painting1.calculate_age()};is oil: {painting1.is_oil()}")
     print(f"{type(painting1).__name__=}")
-
-    print(give_name_artifact())
+    print("-------\n")
+    obj2 = Building("abc", 1321, 114, "Idk", "where ??")
+    print(f"{obj2.name} age: {obj2.calculate_age()}")
+    print(obj2)
+    print(f"{type(obj1).__name__=}")

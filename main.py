@@ -1,5 +1,5 @@
 from artifact import Artifact, Painting, Sculpture, give_name_artifact
-
+from renaissance import paint, sculpture, building
 
 def give_name_main():
     return f"main name: {__name__}"
@@ -16,8 +16,17 @@ if __name__ == "__main__":
 
     s1 = Sculpture("s1", 1950, "marble", 15)
     s2 = Sculpture("s2", 1801, "bronze", 100)
-
+   
+    r1 = paint
+    r2 = sculpture
+    r3 = building
     print(f"{s1.is_old(10)=}")
     print(give_name_artifact())
-    print(give_name_main())
+    print(f'{give_name_main()}\n')
+    print("Let's see my renaissance Collection")
+    print("---------- \n")
+    print(f"{r1}\n")
+    print(f"{r2}\n")
+    print(f"{r3}\n")
+    print("-----------")
     print(__name__)
